@@ -1,0 +1,64 @@
+\documentclass[12pt]{article}
+
+% imports
+\usepackage{appendix}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[english]{babel}
+\usepackage{bbold}
+\usepackage[justification=centering]{caption}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{layouts}
+\usepackage{multirow}
+\usepackage{optidef}
+\usepackage{physics}
+\usepackage{setspace}
+\usepackage{diagbox}
+\usepackage[labelformat=simple]{subcaption}
+\usepackage{xcolor}
+
+% configure imports
+\DeclareMathOperator*{\argmin}{arg\,min}
+\newcommand{\todo}[1]{\textcolor{red}{TODO: #1}}
+\definecolor{darkgreen}{RGB}{46, 184, 46}
+\newcommand{\half}{\frac{1}{2}}
+\newcommand{\R}{\mathbb{R}}
+\captionsetup[subfigure]{labelformat=empty, skip=0pt}
+\captionsetup{labelsep=period}
+\restylefloat{table}
+\renewcommand\thesubfigure{(\alph{subfigure})}
+\addto\captionsenglish{%
+  \renewcommand{\figurename}{FIG.}%
+  \renewcommand{\tablename}{TABLE}%
+  \renewcommand{\appendixname}{APPENDIX}%
+}
+
+\title{Quantum}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\textbf{Definitions}
+\begin{align}
+  D(\alpha) &\equiv \exp[\alpha a^{\dagger} - \alpha^{*} a]\\
+  B(\theta) &\equiv \exp[i\theta(a^{\dagger}b + ab^{\dagger})]\\
+  \ket*{\dot{\psi}} &= \frac{-i}{\hbar} H \ket{\psi}\\
+  \dot{\rho} &= \frac{-i}{\hbar} [H_S, \rho_S] - \sum_k \frac{\gamma_k}{2}(\{c_k^{\dagger} c_k, \rho_S\} - 2 c_k \rho_S c_k^{\dagger})\\
+  H_{\textrm{eff}} &= H_{S} - i \hbar \sum_k \frac{\gamma_k}{2} c_k^{\dagger} c_k
+\end{align}
+
+\textbf{Identities}
+\begin{align}
+  H &\rightarrow UHU^{\dagger} + i \hbar\dot{U}U^{\dagger}\\
+  e^{X} Y e^{-X} &= \sum_{n = 0}^{\infty} \frac{C_n}{n!}; \quad C_n = [X, C_{n - 1}]; \quad C_1 = [X, Y]; \quad C_0 = Y\\
+  [a, a^{\dagger}] &= \mathbb{1}\\
+  a \ket{n} &= \sqrt{n} \ket{n - 1}\\
+  a^{\dagger} \ket{n} &= \sqrt{n + 1}\ket{n + 1}
+\end{align}
+
+\end{document}
