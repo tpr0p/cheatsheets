@@ -1,0 +1,68 @@
+\documentclass[12pt]{article}
+
+% imports
+\usepackage{appendix}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[english]{babel}
+\usepackage{bbold}
+\usepackage[justification=centering]{caption}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{layouts}
+\usepackage{multirow}
+\usepackage{optidef}
+\usepackage{physics}
+\usepackage{setspace}
+\usepackage{diagbox}
+\usepackage[labelformat=simple]{subcaption}
+\usepackage{xcolor}
+
+% configure imports
+\DeclareMathOperator*{\argmin}{arg\,min}
+\newcommand{\todo}[1]{\textcolor{red}{TODO: #1}}
+\definecolor{darkgreen}{RGB}{46, 184, 46}
+\newcommand{\half}{\frac{1}{2}}
+\newcommand{\R}{\mathbb{R}}
+\captionsetup[subfigure]{labelformat=empty, skip=0pt}
+\captionsetup{labelsep=period}
+\restylefloat{table}
+\renewcommand\thesubfigure{(\alph{subfigure})}
+\addto\captionsenglish{%
+  \renewcommand{\figurename}{FIG.}%
+  \renewcommand{\tablename}{TABLE}%
+  \renewcommand{\appendixname}{APPENDIX}%
+}
+
+\title{Solid State}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Crystal Lattices}
+
+\textbf{Bravais Lattice}
+\begin{align}
+L &= \{n_1 \vec{a}_1 + n_2 \vec{a}_2 + n_3 \vec{a}_3 \ \lvert \ n_1, n_2, n_3 \in \mathbb{Z}\}
+\end{align}
+
+\noindent
+\textbf{Wigner-Seitz Unit Cell}
+\begin{enumerate}
+  \item Choose one lattice point. Draw lines to every other lattice point.
+  \item Bisect each line with a plane normal to the line.
+  \item Space bounded by planes forms the unit cell.
+\end{enumerate}
+
+\noindent
+\textbf{Brillouin Zone} is Wigner-Seitz cell of reciprocal lattice.
+
+\begin{align}
+  B &= 2\pi A^{-T}
+\end{align}
+
+\end{document}

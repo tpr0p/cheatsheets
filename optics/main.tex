@@ -49,21 +49,21 @@
 \begin{multicols}{3}
 \textbf{Maxwell}
 \begin{align}
-  \vec{\nabla} \cdot \vec{E} &= \rho_f / \epsilon\\
+  \vec{\nabla} \cdot \vec{E} &= \rho_f / \epsilon_0\\
   \vec{\nabla} \cdot \vec{B} &= 0\\
   \vec{\nabla} \cross \vec{E} &= - \partial_t \vec{B}\\
-  \vec{\nabla} \cross \vec{B} &= \mu \vec{J}_f +
-  \mu \epsilon \partial_t \vec{E}\\
+  \vec{\nabla} \cross \vec{B} &= \mu_0 \vec{J}_f +
+  \mu_0 \epsilon_0 \partial_t \vec{E}\\
   \vec{E} &= -\partial_t \vec{A} - \vec{\nabla} \phi\\
   \vec{B} &= \vec{\nabla} \cross \vec{A}\\
-  \vec{D} &= \epsilon \vec{E} + \vec{P}\\
-  \vec{H} &= \vec{B}/\mu - \vec{M}\\
+  \vec{D} &= \epsilon_0 \vec{E} + \vec{P}\\
+  \vec{H} &= \vec{B}/\mu_0 - \vec{M}\\
   \vec{\nabla} \cdot \vec{P} &= -\rho_b\\
   \vec{J}_b &= \vec{\nabla} \cross \vec{M} + \partial_t \vec{P}\\
-  \phi = \frac{1}{4\pi\epsilon} \int &\frac{
+  \phi = \frac{1}{4\pi\epsilon_0} \int &\frac{
     \rho(\vec{x}^{\prime}, t - \frac{\lvert\vec{x} - \vec{x}^{\prime}\rvert}{c})}{
     \lvert \vec{x} - \vec{x}^{\prime} \rvert} d^3 x^{\prime}\\
-  A = \frac{\mu}{4\pi} \int &\frac{J(\vec{x}^{\prime},
+  \vec{A} = \frac{\mu_0}{4\pi} \int &\frac{\vec{J}(\vec{x}^{\prime},
     t - \frac{\lvert \vec{x} - \vec{x}^{\prime} \rvert}{c})}
   {\lvert \vec{x} - \vec{x}^{\prime} \rvert} d^3 x^{\prime}\\
   \int_V (\vec{\nabla} \cdot \vec{F}) dV &= \int_{\partial V} \vec{F} \cdot \hat{n} d(\partial V)\\
