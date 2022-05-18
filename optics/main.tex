@@ -200,17 +200,11 @@
 
 \textbf{Fourier}
 \begin{align}
-  F(\omega) &= (2\pi)^{-1} \int_{\mathbb{R}}
-  f(t) e^{-i \omega t} dt\\
-  f(t) &= \int_{\mathbb{R}} F(\omega) e^{i \omega t} d\omega\\
-  F(k_x, k_y) &= (2\pi)^{-2} \int_{\mathbb{R}^2} f(x, y)
-  e^{i(k_x x + k_y y)} dx dy\\
-  f(x, y) &= \int_{\mathbb{R}^2} F(k_x, k_y)
-  e^{-i(k_x x + k_y y)} dk_x dk_y\\
-  f * g &= \int_{\mathbb{R}^2} f(x^{\prime}, y^{\prime})
-  g(x - x^{\prime}, y - y^{\prime}) dx^{\prime} dy^{\prime}\\
-  \mathcal{F}[f * g] &= (2\pi)^2 F(k_x, k_y) G(k_x, k_y)\\
-  \mathcal{F}^{-1}[G * F] &= f(x, y) g(x, y)\\
+  F(k_x) &= \int_{\mathbb{R}} e^{-ik_xx} f(x) dx\\
+  f(x) &= \int_{\mathbb{R}} e^{ik_xx} F(k_x) \frac{dk_x}{2\pi}\\
+  f(x) * g(x) &= \int_{\mathbb{R}} f(x^{\prime}) g(x - x^{\prime}) dx^{\prime}\\
+  \mathcal{F}[f(x) * g(x)] &= F(k_x) G(k_x)\\
+  \mathcal{F}[f(x)g(x)] &= (2\pi)^{-1} F(k_x) * G(k_x)
 \end{align}
 
 \textbf{Scalar Wave}
@@ -220,8 +214,8 @@
   \abs{\partial_z^2 u} &\ll \abs{k\partial_zu}\\
   kd_x^2/2z &\gg \pi \ \textrm{NF}\\
   kd_x^2/2z &\ll 1 \ \textrm{FF}\\
-  h(x, y, z) &= \frac{i}{\lambda z} e^{-i (k / 2z)(x^2 + y^2)}\\
-  H(k_x, k_y, z) &= (2\pi)^{-2} e^{i (z / 2k)(k_x^2 + k_y^2)}\\
+  h(x, y, z) &= \frac{-i}{\lambda z} e^{i (k / 2z)(x^2 + y^2)}\\
+  H(k_x, k_y, z) &= e^{-i (z / 2k)(k_x^2 + k_y^2)}\\
   (\textrm{thin lens}) \ \phi &= i(k/2f)(x^2+y^2)
 \end{align}
 \begin{align}
