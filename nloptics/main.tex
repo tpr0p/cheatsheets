@@ -62,7 +62,9 @@
   \rho &= \rho_f + \rho_b\\
   \rho_b &= -\vec{\nabla} \cdot \vec{P}\\
   \vec{J} &= \vec{J}_{f} + \vec{J}_{b}\\
-  \vec{J}_b &= \vec{\nabla} \cross \vec{M} + \partial_t \vec{P}\\
+  \vec{J}_b &= \vec{\nabla} \cross \vec{M} + \partial_t \vec{P}
+\end{align}
+\begin{align}
   \phi = \frac{1}{4\pi\epsilon_0} \int &\frac{
     \rho(\vec{x}^{\prime}, t - \frac{\lvert\vec{x} - \vec{x}^{\prime}\rvert}{c})}{
     \lvert \vec{x} - \vec{x}^{\prime} \rvert} d^3 x^{\prime}\\
@@ -70,7 +72,9 @@
     t - \frac{\lvert \vec{x} - \vec{x}^{\prime} \rvert}{c})}
   {\lvert \vec{x} - \vec{x}^{\prime} \rvert} d^3 x^{\prime}\\
   \int_V (\vec{\nabla} \cdot \vec{F}) dV &= \int_{\partial V} \vec{F} \cdot \hat{n} d(\partial V)\\
-  \int_{S} (\vec{\nabla} \cross \vec{F}) \cdot dS &= \int_{\partial S} \vec{F} \cdot d(\partial S)\\
+  \int_{S} (\vec{\nabla} \cross \vec{F}) \cdot dS &= \int_{\partial S} \vec{F} \cdot d(\partial S)
+\end{align}
+\begin{align}
   \vec{S} &= \vec{E} \cross \vec{H}\\
   \langle \vec{S} \rangle &= \frac{1}{2}
   \textrm{Re}[\vec{E}^{*} \cross \vec{H}]\\
@@ -99,28 +103,39 @@
   \vec{n}_{12} &\cdot (\vec{B}_2 - \vec{B}_1) = 0\\
   c &= \epsilon^{-1/2}_0\mu^{-1/2}_0\\
   v &= \epsilon^{-1/2}\mu^{-1/2}\\
-  n &= c/v\\
-  c &= \lambda f = \omega/k_0
+  \begin{split}
+    n &= c/v\\
+    &= \sqrt{\frac{\epsilon\mu}{\epsilon_0\mu_0}}
+  \end{split}\\
+  c &= \lambda f = \omega/k_0\\
+  \begin{split}
+    v_g &{}= \partial_k \omega\\
+    &= c (n - \lambda \partial_{\lambda} n)^{-1}
+  \end{split}\\
 \end{align}
 
 \textbf{EO}
 \begin{align}
-  \bar{\bar{\kappa}}_{ij} &= \bar{\bar{\epsilon}}_{ij}^{-1} = \epsilon_0^{-1} (n_{ij}^{-2} \delta_{ij} + r_{ijk} E_k)\\ % Yariv eq 9.1-3
-  \bar{P}^{(i)} &= \epsilon_0 \bar{\bar{\chi}}^{(i)} \bar{E}^{i}\\
+    \bar{\bar{\kappa}}_{ij} &= \bar{\bar{\epsilon}}_{ij}^{-1} = \epsilon_0^{-1} (n_{ij}^{-2} \delta_{ij} + r_{ijk} E_k)\\ % Yariv eq 9.1-3
+    \bar{P}^{(i)} &= \epsilon_0 \bar{\bar{\chi}}^{(i)} \bar{E}^{i}
 \end{align}
 
 \textbf{kDB}
 \begin{align}
   \bar{\bar{T}} &=
   \begin{pmatrix}
-    \sin\phi & -\cos\phi & 0\\
-    \cos\theta\cos\phi & \cos\theta\sin\phi & -\sin\theta\\
-    \sin\theta\cos\phi & \sin\theta\sin\phi & \cos\theta
-  \end{pmatrix} % Kong eq 3.3.34
+    \cos\phi & \sin\phi & 0\\
+    -\cos\theta\sin\phi & \cos\theta\cos\phi & -\sin\theta\\
+    -\sin\theta\sin\phi & \sin\theta\cos\phi & \cos\theta
+  \end{pmatrix}\\ % HW3 Sol. %% TODO: this is currently Rx(\theta)Rz(-\phi), change it to Ry(\theta)Rz(\phi) after semester
+  &= R_x(\theta) R_z(-\phi)
 \end{align}
 \begin{align}
-  \begin{pmatrix} \hat{e}_1 & \hat{e}_2 & \hat{e}_3=\hat{k}\end{pmatrix}^T &= \bar{\bar{T}}
-  \begin{pmatrix} \hat{x} & \hat{y} & \hat{z}\end{pmatrix}^T
+  \begin{split}
+    &\begin{pmatrix} \hat{e}_1 = o & \hat{e}_2 = e & \hat{e}_3=\hat{k}\end{pmatrix}^T\\
+    &= \bar{\bar{T}}
+    \begin{pmatrix} \hat{x} & \hat{y} & \hat{z}\end{pmatrix}^T
+  \end{split}
 \end{align}
 \begin{align}
   \bar{E}_k &= \bar{\bar{\kappa}}_k \bar{D}_k + \bar{\bar{\chi}}_k \bar{B}_k\\
@@ -162,7 +177,8 @@
       D_1\\
       D_2
   \end{pmatrix}
-  \end{split}
+  \end{split}\\
+  u &= \omega / k
 \end{align}
 Derive by considering $\bar{\nabla} \cross \bar{E}$, $\bar{\nabla} \cross \bar{H}$,
 $\bar{\nabla} \cdot \bar{B}$, $\bar{\nabla} \cdot \bar{D}$ source-free, then FT.
@@ -215,25 +231,220 @@ of $\bar{\bar{\epsilon}}_{ij}$.
   \end{pmatrix}\\
 \end{align}
 
-\textbf{Misc NL}
+\textbf{NL}
 \begin{align}
-  P(t) &= N (-e) x(t)\\
-  \bar{P}^{(i)} &= \epsilon_0 \bar{\bar{\chi}}^{(i)} \bar{E}^{i}\\
+  d_{ijk} &= \frac{1}{2} \chi_{ijk}\\ %% Boyd
+  n_{e}(\theta) &= (n_e^{-2}\sin^2\theta + n_0^{-2}\cos^2\theta)^{-1/2}\\ %% Boyd eq 2.3.8
+  \begin{split}
+    \tan\rho &{}= \frac{\lvert\hat{S} \cross \hat{k}\rvert}{\hat{S} \cdot \hat{k}}\\
+    &= \frac{\lvert \bar{E} \cross \bar{D} \rvert}{\bar{E} \cdot \bar{D}}\\
+    &= \frac{1}{2}n_e(\theta)^2\sin2\theta(n_e^{-2} - n_o^{-2} )\\
+    &(\textrm{Type I - Neg. Uniaxial})
+  \end{split}
 \end{align}
+For walk-off angle, choose outgoing wave $D_k$ in kDB to lie along axis chosen for phase matching.
+Transform out of kDB. Use $\bar{E} = \bar{\bar{\kappa}} \bar{D}$ to find outgoing E field. Use
+formula for $\tan\rho$.
+
+\textbf{QPM}
+\begin{align}
+  \frac{w}{\Lambda} &= \frac{1}{2m}\\
+  k_{m} &= \frac{2\pi m}{\Lambda} = \Delta k\\
+  \begin{split}
+    C_m &= \frac{2}{m\pi}\sin(\frac{m\pi w}{\Lambda}) \quad (m \neq 0)\\
+    &= \frac{2w}{\Lambda} - 1 \quad (m = 0)
+  \end{split}
+\end{align}
+%% TODO: remove after semester
+
+\textbf{Gaussian Beam}
+\begin{align}
+  \begin{split}
+    u_{00} &{}= 2^{1/2}\pi^{-1/2}w^{-1}e^{i\phi}\\
+    &e^{-(x^2+y^2)/w^2}e^{-i(k/2R)(x^2+y^2)}
+  \end{split}\\
+  w^2 &= w_0^2[1+{(z/z_R)}^2]\\
+  R &= (z^2 + z_R^2) / z\\
+  \textrm{tan}\phi &= z/z_R\\
+  z_R &= k w_0^2 / 2\\
+  2 \omega_0 &\approx \frac{2\lambda}{\pi n\sin\theta}
+\end{align}
+%% TODO: remove after semester
 
 \textbf{Misc Technical}
 \begin{align}
-  2\cos(\theta) &= (e^{i\theta} + e^{-i\theta})\\
-  i2\sin(\theta) &= (e^{i\theta} - e^{-i\theta})
+  2\cos(x) &= e^{ix} + e^{-ix}\\
+  i2\sin(x) &= e^{ix} - e^{-ix}\\
+  2\cosh(x) &= e^x + e^{-x}\\
+  2\sinh(x) &= e^x - e^{-x}\\
+  \partial_x \sinh(x) &= \cosh(x)\\
+  \partial_x \cosh(x) &= \sinh(x)\\
+  \epsilon_{ijk} \epsilon_{ilm} &= \delta_{jl} \delta_{km} - \delta_{jm} \delta_{kl}\\
+  f(x) = &\sum_{n = -\infty}^{\infty} c_n e^{i2\pi n x / P}\\
+  c_n = \frac{1}{P} \int_{P} &f(x) e^{-i2\pi n x / P}\\
+  \int_{\mathbb{R}} &(\frac{\sin x}{x})^2dx = \pi
 \end{align}
 
 \textbf{Misc Non-technical}
 FA-55.10\% Coffey. Parents no HS. Eagle Scout. King College. Dyslexia.
 MLK, Ghandi, Parents, Robert E Lee. Hand-written notes. Meditation.
+%% TODO: remove after semester
 
-%% TODO:
-%% NL poynting + derivation
+\textbf{Classical Polarization Model}
+\begin{align}
+P &= -Nex(t)\\
+\mathcal{L} &= \partial_t^2 + \Gamma\partial_t + \omega_0^2\\
+c(\omega) &= (\omega_0^2 - \omega^2 + i\Gamma\omega)^{-1}\\
+\mathcal{L}x &= \frac{F}{m} - \alpha x^2\\
+x &= x^{(1)} + x^{(2)} + x^{(3)} + \dots
+\end{align}
+Consider iterative solutions that include one higher order in $x^{(i)}$. Drop terms in the
+EOM that are of order $i + 1$ and higher.
 
 \end{multicols}
+
+\pagebreak
+
+\begin{multicols}{2}
+  
+  \textbf{NL WE GV}
+  \begin{align}
+      \partial_z E + v_g^{-1} \partial_t E &= -i \frac{\omega \mu_0 c}{2n} P^{NL} e^{i(k - k_p) z}\\
+    D(z, t) &= \int \epsilon(\omega + \delta \omega) E(\omega + \delta \omega)
+    e^{-i[kz - (\omega + \delta \omega)t]} d\delta\omega\\
+    \begin{split}
+      \partial_t^2 D = \int &[\omega^2 {}\epsilon(\omega) + 2 \omega \delta\omega \epsilon(\omega)
+        + \omega^2 \epsilon^{\prime}(\omega) \delta\omega]\\
+      &E(\omega + \delta\omega)
+      e^{-i[kz - (\omega + \delta \omega)t]} d\delta\omega
+    \end{split}\\
+    v_g^{-1} &= \partial_\omega k\\
+    2kv_g^{-1} &= 2\mu_0 \epsilon \omega + \mu_0 \omega^2 \epsilon^{\prime}(\omega)
+  \end{align}
+  Alternative Derivation,
+  \begin{align}
+    \begin{split}
+      \partial_z E &= i[k(\omega) - k(\omega_0)] E\\
+      &= i[\partial_{\omega} k (\omega - \omega_0) + \frac{1}{2}\partial_{\omega}^2 k (\omega - \omega_0)^2] E\\
+      &= -\partial_{\omega} k \partial_t E - \frac{i}{2}\partial_{\omega}^2 k \partial^2_t E
+    \end{split}
+  \end{align}
+
+  \textbf{NL Processes}
+  
+  Para(Amp/Osc)
+  \begin{align}
+    \partial_z E_1 + \alpha_1 E_1 &= -i \kappa_1 E_3 E_2^* e^{-i\Delta k z}\\
+    E_1 &= E_{10} e^{\gamma z - i \Delta k z / 2}\\
+    (\gamma - i \Delta k z / 2 + \alpha_1) E_1 &+ i \kappa_1 E_3 E_2^* = 0\\
+    (\gamma + i \Delta k z / 2 + \alpha_2) E_2^* &-i \kappa_1 E_3^* E_1 = 0\\
+    \begin{split}
+      \kappa_i {}&= \frac{\mu_0 \epsilon_0 \omega_i^2 4 d_{\textrm{eff}} }{2 k_i}\\
+      &= \frac{4\pi d_{\textrm{eff}}}{\lambda n}
+    \end{split}\\
+    \begin{split}
+      \gamma_\pm = -\frac{1}{2}(\alpha_1 + \alpha_2) \; &{}\pm \; \{\frac{1}{4}(\alpha_1 + \alpha_2)^2\\
+      - \alpha_1\alpha_2 -\frac{\Delta k^2}{4} &-i(\alpha_1-\alpha_2)\frac{\Delta k}{2} + \kappa_1\kappa_2\lvert E_3\rvert^2\}^{1/2}
+    \end{split}\\
+    g &= (\kappa_1 \kappa_2 {\lvert E_3 \rvert}^2 - \Delta k^2 / 4)^{1/2}\\
+    \begin{split}
+      E_1(z) = e^{-\alpha z - i\Delta k z / 2} {}&\{E_1(0) \cosh gz \\
+      - i[\frac{\Delta k}{2 g}E_1(0) &+ \frac{\kappa_1}{g} E_3 E_2^*(0)] \sinh gz\}
+    \end{split}\\
+    G_1(z) &= \frac{{\lvert E_1(z) \rvert}^2}{{\lvert E_1(0) \rvert}^2} - 1\\
+    \cosh gz &= 1 + \frac{\ell_1 \ell_2}{2 - \ell_1 - \ell_2}\\
+    \ell_i &= 1 - R_ie^{-\alpha_i z}
+  \end{align}
+
+  Four Wave Mixing
+  \begin{align}
+    \omega_4 + \omega_3 &= \omega_1 + \omega_2\\
+    E_1, E_2 &\; \textrm{const.}\\
+    \partial_z E_4 &= -i \frac{\kappa_4}{\kappa_c} E_1 E_2 E_3^*\\
+    \kappa_c &= \frac{\omega_2 d}{n_i c}
+  \end{align}
+
+  $\chi^{(3)}$
+  \begin{align}
+    \partial_z E + v_g^{-1} \partial_t E &= -i \frac{k^{\prime\prime}}{2} \partial_t^2 E
+    + i \kappa \lvert E \rvert^2 E\\
+    \kappa &= \frac{3 \omega \chi^{(3)}}{8 c n}\\
+    \tau &= t - v_g^{-1} z\\
+    \xi &= z\\
+    \partial_\xi E &= -i \frac{k^{\prime\prime}}{2} \partial_\tau^2 E + i \kappa \lvert E \rvert^2 E\\
+    E(\xi, \tau) &= A_0 \sech(\tau/\tau_0) e^{i\kappa \lvert A_0 \rvert^2 \xi}\\
+    \tau_0^{-2} &= -\kappa \lvert A_0 \rvert^2 / k^{\prime\prime}\\
+    \chi_{xxxx}^{(3)} &= T_{xi} \chi^{(3)}_{ijkl} T_{jx} T_{kx} T_{lx}
+  \end{align}
+
+  \textbf{Quantum}
+  
+  General
+  \begin{align}
+    \ket*{\dot{\psi}} &= -iH/\hbar\ket{\psi}\\
+    \dot{\rho} &= -i [H/\hbar, \rho]\\
+    H_1/\hbar &= U_1^{\dagger}H_0/\hbar U_1 - i U_{1}^{\dagger}\dot{U}_1\\
+    \Gamma &= \frac{2\pi}{\hbar} \lvert \bra{f} H^{\prime} \ket{i} \rvert^2 \rho(E_f)\\
+    \langle P \rangle &= \frac{N}{V}\langle \mu \rangle
+  \end{align}
+
+    Two-Level Atom
+  \begin{align}
+    \lvert c_n^{(1)} \rvert^2 &= \lvert \Omega \rvert^2 (\frac{\sin \Delta t / 2}{\Delta / 2})^2\\
+    \dot{c}_n &= -i \Delta c_n + i \Omega c_g\\
+    \rho_{ng}^{(1)} &= (\omega_{ng} - \nu - i\Gamma_2)^{-1} \Omega e^{-i\nu t}(\rho_{gg}^{(0)} - \rho_{nn}^{(0)})\\
+    \Omega &= \frac{\mu_{ng} E}{2 \hbar}; \quad \Delta = \omega_{ng} - \nu
+  \end{align}
+
+  Perturbation Theory
+  \begin{align}
+    \dot{c}_{n}^{(n)} = -i \sum_m &e^{-i\omega_{mn} t} H_{nm}^{\prime}(t)/\hbar \; c_{m}^{(n - 1)}(t)\\ %% HW6
+    \begin{split}
+      \dot{\rho}_{mn}^{(n)} = -i \Omega_{mn} \rho_{mn}^{(n)}&\\
+      -i \sum_{l} (H^{\prime}_{ml}&/\hbar \; \rho_{ln}^{(n - 1)} - \rho_{ml}^{(n - 1)} H^{\prime}_{ln}/\hbar) %% HW6
+    \end{split}\\
+    \Omega_{mn} &= \omega_{mn} - i\Gamma_{mn}\\
+    A_{nm}(t_{j + 1} - t_j) &= e^{-i\Omega_{nm}(t_{j+1} - t_j)}\\
+    H^{\prime}_{nm}(t_j) &= -\frac{1}{2}\mu_{nm}Ee^{-i\omega t_j}
+  \end{align}
+
+  \begin{enumerate}
+  \item Use $\rho^{(0)}_{nm}(t_0)$
+  \item For ket line from $\ket*{n}$ to $\ket*{m}$ through $t_j$, use $H_{mn}^{\prime}(t_j)$; take $\dagger$ for bra line;
+    take $\dagger$ if photon leaves system
+  \item For ket--bra lines along $\ket*{n}\bra*{m}$ from $t_j$ to $t_{j + 1}$, use $\int_{t_0}^{t_{j+1}} dt_j A_{nm}(t_{j + 1} - t_j)$
+  \item Use $(i\hbar)^{-1}$ for each integration
+  \item Steady state $\lim_{t_0 \rightarrow -\infty}$
+  \end{enumerate}
+  
+\end{multicols}
+
+\begin{table}
+  \begin{tabular}{c|c|c}
+    &(+) uniaxial ($n_e > n_o$)& (-) uniaxial ($n_e < n_o$)\\
+    \hline
+    Type I & $n_3^o \omega_3 = n_1^e \omega_1 + n_2^e \omega_2$ & $n_3^e \omega_3 = n_1^o \omega_1 + n_2^o \omega_2$\\
+    Type II & $n_3^o \omega_3 = n_1^o \omega_1 + n_2^e \omega_2$ & $n_3^e \omega_3 = n_1^e \omega_1 + n_2^o \omega_2$\\
+    && $\omega_3 > \omega_2 > \omega_1$\\
+  \end{tabular}
+\end{table}
+
+
+\begin{table}
+  \begin{tabular}{c|c}
+    index type & crystal structure\\
+    \hline
+    isotropic & cubic (432, $\bar{4}$3m, 23, m3, m3m)\\
+    \hline
+    uniaxial & trigonal (3, 32, 3m, $\bar{3}$, $\bar{3}$m)\\
+    & tetragonal (4, $\bar{4}$, 422, 4mm, $\bar{4}$2m, 4/m, 4/mmm)\\
+    & hexagonal (6, $\bar{6}$, 622, 6mm, $\bar{6}$m2, 6/m, 6/mmm)\\
+    \hline
+    biaxial & triclinic (1, $\bar{1}$)\\
+    & monoclinic (2, m, 2/m)\\
+    & orthorhombic (222, mm2, mmm)\\
+  \end{tabular} %% Boyd p 46, 76
+\end{table}
+
 
 \end{document}

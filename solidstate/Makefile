@@ -7,7 +7,7 @@ SRCS=$(HEADER).tex
 
 .PHONY: all clean
 
-all: main
+all: main-no-bib
 
 main:
 	$(PDF) $(SRCS)
