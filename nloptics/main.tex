@@ -48,91 +48,102 @@
 \vspace{-4em}
 \begin{multicols}{3}
 
-\textbf{Maxwell}
-\begin{align}
-  \vec{\nabla} \cdot \vec{E} &= \rho / \epsilon_0\\
-  \vec{\nabla} \cdot \vec{B} &= 0\\
-  \vec{\nabla} \cross \vec{E} &= - \partial_t \vec{B}\\
-  \vec{\nabla} \cross \vec{B} &= \mu_0 \vec{J} +
-  \mu_0 \epsilon_0 \partial_t \vec{E}\\
-  \vec{E} &= -\partial_t \vec{A} - \vec{\nabla} \phi\\
-  \vec{B} &= \vec{\nabla} \cross \vec{A}\\
-  \vec{D} &= \epsilon_0 \vec{E} + \vec{P}\\
-  \vec{H} &= \vec{B}/\mu_0 - \vec{M}\\
-  \rho &= \rho_f + \rho_b\\
-  \rho_b &= -\vec{\nabla} \cdot \vec{P}\\
-  \vec{J} &= \vec{J}_{f} + \vec{J}_{b}\\
-  \vec{J}_b &= \vec{\nabla} \cross \vec{M} + \partial_t \vec{P}
-\end{align}
-\begin{align}
-  \phi = \frac{1}{4\pi\epsilon_0} \int &\frac{
-    \rho(\vec{x}^{\prime}, t - \frac{\lvert\vec{x} - \vec{x}^{\prime}\rvert}{c})}{
-    \lvert \vec{x} - \vec{x}^{\prime} \rvert} d^3 x^{\prime}\\
-  \vec{A} = \frac{\mu_0}{4\pi} \int &\frac{\vec{J}(\vec{x}^{\prime},
-    t - \frac{\lvert \vec{x} - \vec{x}^{\prime} \rvert}{c})}
-  {\lvert \vec{x} - \vec{x}^{\prime} \rvert} d^3 x^{\prime}\\
-  \int_V (\vec{\nabla} \cdot \vec{F}) dV &= \int_{\partial V} \vec{F} \cdot \hat{n} d(\partial V)\\
-  \int_{S} (\vec{\nabla} \cross \vec{F}) \cdot dS &= \int_{\partial S} \vec{F} \cdot d(\partial S)
-\end{align}
-\begin{align}
-  \vec{S} &= \vec{E} \cross \vec{H}\\
-  \langle \vec{S} \rangle &= \frac{1}{2}
-  \textrm{Re}[\vec{E}^{*} \cross \vec{H}]\\
-  (\nabla^2 + k^2) &G_{H} =
-  -\delta(\vec{x} - \vec{x}^{\prime})\\
-  G_H &= \frac{e^{ik\lvert \vec{x}
-      - \vec{x}^{\prime} \rvert}}{4\pi \lvert \vec{x} - \vec{x}^{\prime} \rvert}\\
-  \mu_0 \epsilon_0 \partial_t \phi_L &= -\vec{\nabla} \cdot \vec{A}_L
-\end{align}
-\begin{align}
-  \begin{split}
-    G_{L-} = &\textstyle{\sum\limits_{\ell, m}} {}\frac{4\pi}{2\ell + 1}
-    \frac{r^{\ell}}{r^{\prime \ell + 1}}\\
-  &Y^{*}_{\ell, m}(\theta^{\prime}, \phi^{\prime})
-  Y_{\ell, m}(\theta, \phi)
-  \end{split}\\
-  \begin{split}
-  G_{L+} = &{}\textstyle{\sum\limits_{\ell, m}}
-  \frac{4\pi}{2\ell + 1} \frac{r^{\prime \ell}}{r^{\ell + 1}}\\
-  &Y^{*}_{\ell, m}(\theta^{\prime}, \phi^{\prime})
-  Y_{\ell, m}(\theta, \phi)
-  \end{split}\\
-  \vec{n}_{12} &\times {\vec{E}_2 - \vec{E}_1} = 0\\
-  \vec{n}_{12} &\times {\vec{H}_2 - \vec{H}_1} = \vec{J}_s\\
-  \vec{n}_{12} &\cdot (\vec{D}_2 - \vec{D}_1) = \sigma_s\\
-  \vec{n}_{12} &\cdot (\vec{B}_2 - \vec{B}_1) = 0\\
-  c &= \epsilon^{-1/2}_0\mu^{-1/2}_0\\
-  v &= \epsilon^{-1/2}\mu^{-1/2}\\
-  \begin{split}
-    n &= c/v\\
-    &= \sqrt{\frac{\epsilon\mu}{\epsilon_0\mu_0}}
-  \end{split}\\
-  c &= \lambda f = \omega/k_0\\
-  \begin{split}
-    v_g &{}= \partial_k \omega\\
-    &= c (n - \lambda \partial_{\lambda} n)^{-1}
-  \end{split}\\
-\end{align}
+%% \textbf{Maxwell}
+%% \begin{align}
+%%   \vec{\nabla} \cdot \vec{E} &= \rho / \epsilon_0\\
+%%   \vec{\nabla} \cdot \vec{B} &= 0\\
+%%   \vec{\nabla} \cross \vec{E} &= - \partial_t \vec{B}\\
+%%   \vec{\nabla} \cross \vec{B} &= \mu_0 \vec{J} +
+%%   \mu_0 \epsilon_0 \partial_t \vec{E}\\
+%%   \vec{E} &= -\partial_t \vec{A} - \vec{\nabla} \phi\\
+%%   \vec{B} &= \vec{\nabla} \cross \vec{A}\\
+%%   \vec{D} &= \epsilon_0 \vec{E} + \vec{P}\\
+%%   \vec{H} &= \vec{B}/\mu_0 - \vec{M}\\
+%%   \rho &= \rho_f + \rho_b\\
+%%   \rho_b &= -\vec{\nabla} \cdot \vec{P}\\
+%%   \vec{J} &= \vec{J}_{f} + \vec{J}_{b}\\
+%%   \vec{J}_b &= \vec{\nabla} \cross \vec{M} + \partial_t \vec{P}
+%% \end{align}
+%% \begin{align}
+%%   \phi = \frac{1}{4\pi\epsilon_0} \int &\frac{
+%%     \rho(\vec{x}^{\prime}, t - \frac{\lvert\vec{x} - \vec{x}^{\prime}\rvert}{c})}{
+%%     \lvert \vec{x} - \vec{x}^{\prime} \rvert} d^3 x^{\prime}\\
+%%   \vec{A} = \frac{\mu_0}{4\pi} \int &\frac{\vec{J}(\vec{x}^{\prime},
+%%     t - \frac{\lvert \vec{x} - \vec{x}^{\prime} \rvert}{c})}
+%%   {\lvert \vec{x} - \vec{x}^{\prime} \rvert} d^3 x^{\prime}\\
+%%   \int_V (\vec{\nabla} \cdot \vec{F}) dV &= \int_{\partial V} \vec{F} \cdot \hat{n} d(\partial V)\\
+%%   \int_{S} (\vec{\nabla} \cross \vec{F}) \cdot dS &= \int_{\partial S} \vec{F} \cdot d(\partial S)
+%% \end{align}
+%% \begin{align}
+%%   \vec{S} &= \vec{E} \cross \vec{H}\\
+%%   \langle \vec{S} \rangle &= \frac{1}{2}
+%%   \textrm{Re}[\vec{E}^{*} \cross \vec{H}]\\
+%%   (\nabla^2 + k^2) &G_{H} =
+%%   -\delta(\vec{x} - \vec{x}^{\prime})\\
+%%   G_H &= \frac{e^{ik\lvert \vec{x}
+%%       - \vec{x}^{\prime} \rvert}}{4\pi \lvert \vec{x} - \vec{x}^{\prime} \rvert}\\
+%%   \mu_0 \epsilon_0 \partial_t \phi_L &= -\vec{\nabla} \cdot \vec{A}_L
+%% \end{align}
+%% \begin{align}
+%%   \begin{split}
+%%     G_{L-} = &\textstyle{\sum\limits_{\ell, m}} {}\frac{4\pi}{2\ell + 1}
+%%     \frac{r^{\ell}}{r^{\prime \ell + 1}}\\
+%%   &Y^{*}_{\ell, m}(\theta^{\prime}, \phi^{\prime})
+%%   Y_{\ell, m}(\theta, \phi)
+%%   \end{split}\\
+%%   \begin{split}
+%%   G_{L+} = &{}\textstyle{\sum\limits_{\ell, m}}
+%%   \frac{4\pi}{2\ell + 1} \frac{r^{\prime \ell}}{r^{\ell + 1}}\\
+%%   &Y^{*}_{\ell, m}(\theta^{\prime}, \phi^{\prime})
+%%   Y_{\ell, m}(\theta, \phi)
+%%   \end{split}\\
+%%   \vec{n}_{12} &\times {\vec{E}_2 - \vec{E}_1} = 0\\
+%%   \vec{n}_{12} &\times {\vec{H}_2 - \vec{H}_1} = \vec{J}_s\\
+%%   \vec{n}_{12} &\cdot (\vec{D}_2 - \vec{D}_1) = \sigma_s\\
+%%   \vec{n}_{12} &\cdot (\vec{B}_2 - \vec{B}_1) = 0\\
+%%   c &= \epsilon^{-1/2}_0\mu^{-1/2}_0\\
+%%   v &= \epsilon^{-1/2}\mu^{-1/2}\\
+%%   \begin{split}
+%%     n &= c/v\\
+%%     &= \sqrt{\frac{\epsilon\mu}{\epsilon_0\mu_0}}
+%%   \end{split}\\
+%%   c &= \lambda f = \omega/k_0\\
+%%   \begin{split}
+%%     v_g &{}= \partial_k \omega\\
+%%     &= c (n - \lambda \partial_{\lambda} n)^{-1}
+%%   \end{split}\\
+  %% \end{align}
 
-\textbf{EO}
+\textbf{NL}
 \begin{align}
-    \bar{\bar{\kappa}}_{ij} &= \bar{\bar{\epsilon}}_{ij}^{-1} = \epsilon_0^{-1} (n_{ij}^{-2} \delta_{ij} + r_{ijk} E_k)\\ % Yariv eq 9.1-3
-    \bar{P}^{(i)} &= \epsilon_0 \bar{\bar{\chi}}^{(i)} \bar{E}^{i}
+  \bar{\bar{\kappa}}_{ij} &= \bar{\bar{\epsilon}}_{ij}^{-1} = \epsilon_0^{-1} (n_{ij}^{-2} \delta_{ij} + r_{ijk} E_k)\\ % Yariv eq 9.1-3
+  \bar{P}^{(i)} &= \epsilon_0 \bar{\bar{\chi}}^{(i)} \bar{E}^{i}\\
+  d_{ijk} &= \frac{1}{2} \chi_{ijk}\\ %% Boyd
+  n_{e}(\theta) &= (n_e^{-2}\sin^2\theta + n_0^{-2}\cos^2\theta)^{-1/2}\\ %% Boyd eq 2.3.8
+  \begin{split}
+    \tan\rho &{}= \frac{\lvert\hat{S} \cross \hat{k}\rvert}{\hat{S} \cdot \hat{k}}\\
+    &= \frac{\lvert \bar{E} \cross \bar{D} \rvert}{\bar{E} \cdot \bar{D}}\\
+    &= \frac{1}{2}n_e(\theta)^2\sin2\theta(n_e^{-2} - n_o^{-2} )\\
+    &(\textrm{Type I - Neg. Uniaxial})
+  \end{split}
 \end{align}
+For walk-off angle, choose outgoing wave $D_k$ in kDB to lie along axis chosen for phase matching.
+Transform out of kDB. Use $\bar{E} = \bar{\bar{\kappa}} \bar{D}$ to find outgoing E field. Use
+formula for $\tan\rho$.
 
 \textbf{kDB}
 \begin{align}
   \bar{\bar{T}} &=
   \begin{pmatrix}
-    \cos\phi & \sin\phi & 0\\
-    -\cos\theta\sin\phi & \cos\theta\cos\phi & -\sin\theta\\
-    -\sin\theta\sin\phi & \sin\theta\cos\phi & \cos\theta
-  \end{pmatrix}\\ % HW3 Sol. %% TODO: this is currently Rx(\theta)Rz(-\phi), change it to Ry(\theta)Rz(\phi) after semester
-  &= R_x(\theta) R_z(-\phi)
+    \cos\theta\cos\phi & -\sin\phi & \sin\theta\cos\phi\\
+    \cos\theta\sin\phi & \cos\phi & \sin\theta\sin\phi\\
+    -\sin\theta & 0 & \cos\theta
+  \end{pmatrix}\\
+  &= R_z(\phi) R_y(\theta)
 \end{align}
 \begin{align}
   \begin{split}
-    &\begin{pmatrix} \hat{e}_1 = o & \hat{e}_2 = e & \hat{e}_3=\hat{k}\end{pmatrix}^T\\
+    &\begin{pmatrix} \hat{e}_1 = e & \hat{e}_2 = o & \hat{e}_3=\hat{k}\end{pmatrix}^T\\
     &= \bar{\bar{T}}
     \begin{pmatrix} \hat{x} & \hat{y} & \hat{z}\end{pmatrix}^T
   \end{split}
@@ -180,28 +191,28 @@
   \end{split}\\
   u &= \omega / k
 \end{align}
-Derive by considering $\bar{\nabla} \cross \bar{E}$, $\bar{\nabla} \cross \bar{H}$,
-$\bar{\nabla} \cdot \bar{B}$, $\bar{\nabla} \cdot \bar{D}$ source-free, then FT.
+%% Derive by considering $\bar{\nabla} \cross \bar{E}$, $\bar{\nabla} \cross \bar{H}$,
+%% $\bar{\nabla} \cdot \bar{B}$, $\bar{\nabla} \cdot \bar{D}$ source-free, then FT.
 
-\textbf{NL Poynting}
-\begin{align}
-  (\nabla \cross E &= -i \omega \mu_0 H) \cdot H^{*}\\
-  (\nabla \cross H &= J + i \omega \bar{\bar{\epsilon}} E) \cdot E^{*}\\
-  \begin{split}
-    \nabla \cdot (E \cross H^{*}) &= (\nabla \cross E) \cdot H^*\\
-    &- (\nabla \cross H^{*}) \cdot E
-  \end{split}\\
-  \begin{split}
-    \nabla \cdot (E \cross H^*) - i \omega &(E \bar{\bar{\epsilon}} E^* - \mu_0 H H^*)\\
-    &+ E \cdot J^* = 0
-  \end{split}
-\end{align}
-For lossless media, time-averaged power transferred to medium is zero.
-\begin{align}
-  \textrm{Re}[i\omega E \bar{\bar{\epsilon}} E^*] &= 0
-\end{align}
-Consider $E = E \hat{x}$ and $E = E_x \hat{x} + E_y \hat{y}$ to derive properties
-of $\bar{\bar{\epsilon}}_{ij}$.
+%% \textbf{NL Poynting}
+%% \begin{align}
+%%   (\nabla \cross E &= -i \omega \mu_0 H) \cdot H^{*}\\
+%%   (\nabla \cross H &= J + i \omega \bar{\bar{\epsilon}} E) \cdot E^{*}\\
+%%   \begin{split}
+%%     \nabla \cdot (E \cross H^{*}) &= (\nabla \cross E) \cdot H^*\\
+%%     &- (\nabla \cross H^{*}) \cdot E
+%%   \end{split}\\
+%%   \begin{split}
+%%     \nabla \cdot (E \cross H^*) - i \omega &(E \bar{\bar{\epsilon}} E^* - \mu_0 H H^*)\\
+%%     &+ E \cdot J^* = 0
+%%   \end{split}
+%% \end{align}
+%% For lossless media, time-averaged power transferred to medium is zero.
+%% \begin{align}
+%%   \textrm{Re}[i\omega E \bar{\bar{\epsilon}} E^*] &= 0
+%% \end{align}
+%% Consider $E = E \hat{x}$ and $E = E_x \hat{x} + E_y \hat{y}$ to derive properties
+%% of $\bar{\bar{\epsilon}}_{ij}$.
 
 \textbf{NL WE}
 \begin{align}
@@ -215,36 +226,21 @@ of $\bar{\bar{\epsilon}}_{ij}$.
   \vec{\nabla} \cross \vec{\nabla} \cross \vec{E} = \vec{\nabla} \cross &(-\mu_0 \partial_t \vec{H})
 \end{align}
 
-\textbf{Jones}
-\begin{align}
-  V_{RC} &= 2^{-1/2} \begin{pmatrix}1\\e^{i3\pi/2}\end{pmatrix}\\
-  V_{LC} &= 2^{-1/2} \begin{pmatrix}1\\e^{i\pi/2}\end{pmatrix}\\
-  J_{VWP} &= \begin{pmatrix} 1 & 0\\0 & e^{i \phi}\end{pmatrix}\\
-  \begin{split}
-    \vec{S} {}= &(\abs{E_x}^2 - \abs{E_y}^2) \hat{x}\\
-    &+ 2\textrm{Re}[E_x^{*}E_y] \hat{y}\\
-    &+ 2\textrm{Im}[E_x^{*}E_y] \hat{z}
-  \end{split}\\
-  M_{\theta} &= \begin{pmatrix}
-    \cos\theta & -\sin\theta\\
-    \sin\theta & \cos\theta
-  \end{pmatrix}\\
-\end{align}
-
-\textbf{NL}
-\begin{align}
-  d_{ijk} &= \frac{1}{2} \chi_{ijk}\\ %% Boyd
-  n_{e}(\theta) &= (n_e^{-2}\sin^2\theta + n_0^{-2}\cos^2\theta)^{-1/2}\\ %% Boyd eq 2.3.8
-  \begin{split}
-    \tan\rho &{}= \frac{\lvert\hat{S} \cross \hat{k}\rvert}{\hat{S} \cdot \hat{k}}\\
-    &= \frac{\lvert \bar{E} \cross \bar{D} \rvert}{\bar{E} \cdot \bar{D}}\\
-    &= \frac{1}{2}n_e(\theta)^2\sin2\theta(n_e^{-2} - n_o^{-2} )\\
-    &(\textrm{Type I - Neg. Uniaxial})
-  \end{split}
-\end{align}
-For walk-off angle, choose outgoing wave $D_k$ in kDB to lie along axis chosen for phase matching.
-Transform out of kDB. Use $\bar{E} = \bar{\bar{\kappa}} \bar{D}$ to find outgoing E field. Use
-formula for $\tan\rho$.
+%% \textbf{Jones}
+%% \begin{align}
+%%   V_{RC} &= 2^{-1/2} \begin{pmatrix}1\\e^{i3\pi/2}\end{pmatrix}\\
+%%   V_{LC} &= 2^{-1/2} \begin{pmatrix}1\\e^{i\pi/2}\end{pmatrix}\\
+%%   J_{VWP} &= \begin{pmatrix} 1 & 0\\0 & e^{i \phi}\end{pmatrix}\\
+%%   \begin{split}
+%%     \vec{S} {}= &(\abs{E_x}^2 - \abs{E_y}^2) \hat{x}\\
+%%     &+ 2\textrm{Re}[E_x^{*}E_y] \hat{y}\\
+%%     &+ 2\textrm{Im}[E_x^{*}E_y] \hat{z}
+%%   \end{split}\\
+%%   M_{\theta} &= \begin{pmatrix}
+%%     \cos\theta & -\sin\theta\\
+%%     \sin\theta & \cos\theta
+%%   \end{pmatrix}\\
+%% \end{align}
 
 \textbf{QPM}
 \begin{align}
@@ -285,10 +281,10 @@ formula for $\tan\rho$.
   \int_{\mathbb{R}} &(\frac{\sin x}{x})^2dx = \pi
 \end{align}
 
-\textbf{Misc Non-technical}
-FA-55.10\% Coffey. Parents no HS. Eagle Scout. King College. Dyslexia.
-MLK, Ghandi, Parents, Robert E Lee. Hand-written notes. Meditation.
-%% TODO: remove after semester
+%% \textbf{Misc Non-technical}
+%% FA-55.10\% Coffey. Parents no HS. Eagle Scout. King College. Dyslexia.
+%% MLK, Ghandi, Parents, Robert E Lee. Hand-written notes. Meditation.
+%% %% TODO: remove after semester
 
 \textbf{Classical Polarization Model}
 \begin{align}
