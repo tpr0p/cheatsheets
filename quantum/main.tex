@@ -8,11 +8,13 @@
 \usepackage{bbold}
 \usepackage[justification=centering]{caption}
 \usepackage{float}
+\usepackage[margin=1em]{geometry}
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage[utf8]{inputenc}
 \usepackage{layouts}
 \usepackage{multirow}
+\usepackage{multicol}
 \usepackage{optidef}
 \usepackage{physics}
 \usepackage{setspace}
@@ -43,22 +45,59 @@
 
 \maketitle
 
-\textbf{Definitions}
+\begin{multicols}{2}
+
+\textbf{Dynamics}
 \begin{align}
-  D(\alpha) &\equiv \exp[\alpha a^{\dagger} - \alpha^{*} a]\\
-  B(\theta) &\equiv \exp[i\theta(a^{\dagger}b + ab^{\dagger})]\\
   \ket*{\dot{\psi}} &= \frac{-i}{\hbar} H \ket{\psi}\\
-  \dot{\rho} &= \frac{-i}{\hbar} [H_S, \rho_S] - \sum_k \frac{\gamma_k}{2}(\{c_k^{\dagger} c_k, \rho_S\} - 2 c_k \rho_S c_k^{\dagger})\\
-  H_{\textrm{eff}} &= H_{S} - i \hbar \sum_k \frac{\gamma_k}{2} c_k^{\dagger} c_k
+  \dot{\rho} = \frac{-i}{\hbar} [H_S, \rho_S] - \sum_k &\frac{\gamma_k}{2} (\{c_k^{\dagger} c_k, \rho_S\} - 2 c_k \rho_S c_k^{\dagger})\\
+  H_{\textrm{eff}} &= H_{S} - i \hbar \sum_k \frac{\gamma_k}{2} c_k^{\dagger} c_k\\
+  H &\rightarrow UHU^{\dagger} + i \hbar\dot{U}U^{\dagger}
 \end{align}
 
-\textbf{Identities}
+\textbf{Misc}
 \begin{align}
-  H &\rightarrow UHU^{\dagger} + i \hbar\dot{U}U^{\dagger}\\
-  e^{X} Y e^{-X} &= \sum_{n = 0}^{\infty} \frac{C_n}{n!}; \quad C_n = [X, C_{n - 1}]; \quad C_1 = [X, Y]; \quad C_0 = Y\\
   [a, a^{\dagger}] &= \mathbb{1}\\
   a \ket{n} &= \sqrt{n} \ket{n - 1}\\
-  a^{\dagger} \ket{n} &= \sqrt{n + 1}\ket{n + 1}
+  a^{\dagger} \ket{n} &= \sqrt{n + 1}\ket{n + 1}\\
+  D(\alpha) &= \exp[\alpha a^{\dagger} - \alpha^{*} a]\\
+  B(\theta) &= \exp[i\theta(a^{\dagger}b + ab^{\dagger})]\\
+  e^{X} Y e^{-X} &= \sum_{n = 0}^{\infty} \frac{C_n}{n!}; \quad C_n = [X, C_{n - 1}]\\
+  C_1 &= [X, Y]; \quad C_0 = Y\\
+  \Gamma &= \frac{2\pi}{\hbar} \lvert \bra{f} H^{\prime} \ket{i} \rvert^2 \rho(E_f)\\
+  \langle \vec{P} \rangle &= \frac{N}{V}\langle \vec{d} \rangle\\
+  \vec{d} &= -e \vec{x}
 \end{align}
+
+  \textbf{TLS}
+  \begin{align}
+    \dot{c}_e &= -i \Delta c_e + i \Omega c_g\\
+    \rho_{eg}^{(1)} &= \frac{\Omega}{2(\Delta - i\Gamma)}  e^{-i\nu t}
+    (\rho_{gg}^{(0)} - \rho_{ee}^{(0)})\\
+    \Omega &= \frac{\mu_{ge} E}{\hbar}; \quad \Delta = \omega_{eg} - \nu
+  \end{align}
+
+  \textbf{Perturbation Theory}
+  \begin{align}
+    \dot{c}_{n}^{(n)} = -i \sum_m &e^{-i\omega_{mn} t} H_{nm}^{\prime}(t)/\hbar \; c_{m}^{(n - 1)}(t)\\ %% HW6
+    \begin{split}
+      \dot{\rho}_{mn}^{(n)} = -i \Omega_{mn} \rho_{mn}^{(n)}&\\
+      -i \sum_{l} (H^{\prime}_{ml}&/\hbar \; \rho_{ln}^{(n - 1)} - \rho_{ml}^{(n - 1)} H^{\prime}_{ln}/\hbar) %% HW6
+    \end{split}\\
+    \Omega_{mn} &= \omega_{mn} - i\Gamma_{mn}\\
+    A_{nm}(t_{j + 1} - t_j) &= e^{-i\Omega_{nm}(t_{j+1} - t_j)}\\
+    H^{\prime}_{nm}(t_j) &= -\frac{1}{2}\mu_{nm}Ee^{-i\omega t_j}
+  \end{align}
+
+  \begin{enumerate}
+  \item Use $\rho^{(0)}_{nm}(t_0)$
+  \item For ket line from $\ket*{n}$ to $\ket*{m}$ through $t_j$, use $H_{mn}^{\prime}(t_j)$; take $\dagger$ for bra line;
+    take $\dagger$ if photon leaves system
+  \item For ket--bra lines along $\ket*{n}\bra*{m}$ from $t_j$ to $t_{j + 1}$, use $\int_{t_0}^{t_{j+1}} dt_j A_{nm}(t_{j + 1} - t_j)$
+  \item Use $(i\hbar)^{-1}$ for each integration
+  \item Steady state $\lim_{t_0 \rightarrow -\infty}$
+  \end{enumerate}
+
+\end{multicols}
 
 \end{document}

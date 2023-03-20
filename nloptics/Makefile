@@ -15,7 +15,7 @@ main:
 	$(PDF) $(SRCS)
 	$(PDF) $(SRCS)
 
-main-no-bib:
+main-fast:
 	$(PDF) $(SRCS)
 
 clean:
