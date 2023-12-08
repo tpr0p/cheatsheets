@@ -241,10 +241,7 @@
   H(k_x, k_y, z) &= e^{i (z / 2k)(k_x^2 + k_y^2)}\\
   % https://en.wikipedia.org/wiki/Fresnel_number
   F &= a^2 / z \lambda\\
-  %% NL PSET
-  % also, https://en.wikipedia.org/wiki/Diffraction-limited_system
-  2 w_0^{\prime} &\approx \frac{2\lambda}{\pi n\sin\theta}\\
-  (\textrm{thin lens}) \ \phi &= i(k/2f)(x^2+y^2)
+  (\textrm{thin lens}) \ \phi &= i(k/2f)(x^2+y^2)\\
 \end{align}
 \begin{align}
   %% (\textrm{2D slit, FF}, \frac{-d}{2}, \frac{d}{2}) \ u = \frac{i}{\lambda z} d_x d_y &e^{i(k/2z)(x^2+y^2)}\\
@@ -273,15 +270,19 @@
   %%   &e^{-\rho^2/w^2}e^{-i(k/2R)\rho^2}
   %% \end{aligned}\\
   &\begin{aligned}
-    u_{00} &=\frac{w_0}{w}e^{i\phi}e^{-\rho^2/w^2}e^{-i(k/2R)\rho^2}\\
-    &= \frac{1}{1 - i\tau} e^{-\rho^2 / w_0^2(1 - i\tau)}
+    u_{00} &= \sqrt{\frac{4 P}{c n \epsilon_0 \pi w_0^2}} \frac{w_0}{w}e^{i\phi}e^{-\rho^2/w^2}e^{-i(k/2R)\rho^2}\\
+    &= \sqrt{\frac{4 P}{c n \epsilon_0 \pi w_0^2}} \frac{1}{1 - iz/z_R} e^{-\rho^2 / w_0^2(1 - iz/z_R)}
    \end{aligned}\\
   \rho^2 &= x^2 + y^2\\
   w^2 &= w_0^2[1+{(z/z_R)}^2]\\
   R &= (z^2 + z_R^2) / z\\
   \phi &= \textrm{arctan}(z/z_R)\\
   z_R &= k w_0^2 / 2\\
-  \tau &= z / z_R
+  \tau &= z / z_R\\
+  w_1 &= \frac{2f}{k w_0} \quad\quad \textrm{(2f)}\\
+  %% NL PSET
+  % also, https://en.wikipedia.org/wiki/Diffraction-limited_system
+  2 w_0^{\prime} &\approx \frac{2\lambda}{\pi n\sin\theta}
   %% k_{\textrm{eff}} &= k - \partial_z \phi\\
   %% u_{mn} = C_{mn}&\psi_m(2^{1/2}xw_0^{-1})\psi_n(2^{1/2}yw_0^{-1})\\
   %% C_{mn} = 2^{1/2 -m/2 -n/2} &w_0^{-1} \pi^{-1/2} m!^{-1/2} n!^{-1/2}\\
@@ -301,7 +302,7 @@
 
 \textbf{Ray Matrices}
 \begin{align}
-  q^{-1} &= (z + iz_R)^{-1}\\
+  q &= z + iz_R\\
   q^{\prime} &= \frac{Aq + B}{Cq + D}\\
   %% q^{-1} &= \frac{2C}{(A-D) \pm [(D-A)^2+4CB]^{1/2}}\\
   %% &= \frac{2C}{(A-D) \pm [(D+A)^2-4]^{1/2}}\\
