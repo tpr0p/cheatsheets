@@ -9,6 +9,11 @@
 *.out
 *.aux
 
+# binary
+*.jpeg
+*.pages
+
 # editor
 *~
 *\#
+*.#

@@ -53,14 +53,13 @@
     \sum_{\textrm{path $i$ to common node}} I_i &= 0\\
     \sum_{\textrm{device $i$ on closed loop}} V_i &= 0\\
     V_R &= I R\\
+    \textrm{R adds in series}&\\
     V_L &= L \dot{I}\\
+    E_L &= \frac{1}{2} LI^2\\
+    \textrm{L adds in series}&\\
     V_C &= \frac{1}{C} \int_t I\\
-    R_{\textrm{series}} &= \sum_i R_i\\
-    1/R_{\textrm{parallel}} &= \sum_i 1/R_i\\
-    L_{\textrm{series}} &= \sum_i L_i\\
-    1/L_{\textrm{parallel}} &= \sum_i 1/L_i\\
-    1/C_{\textrm{series}} &= \sum_i 1/C_i\\
-    C_{\textrm{parallel}} &= \sum_i C_i\\
+    E_C &= \frac{1}{2} CV^2\\
+    \textrm{C adds in parallel}&
   \end{align}
 
   \textbf{Periodic Steady State}
@@ -73,6 +72,13 @@
   \begin{align}
     \frac{v_1}{v_2} &= \frac{N_1}{N_2}\\ %% KPVS eq 1.1
     \frac{i_1}{i_2} &= \frac{-N_2}{N_1} %% KPVS eq 1.2
+  \end{align}
+
+  \textbf{Misc}
+  \begin{align}
+    e &= 10^{x/10 \textrm{dB}}\\
+    x &= 10 \ \textrm{log}_{10}(e) \ \textrm{dB}\\
+    a \ \textrm{sin} (x) + b \ \textrm{cos} (x) &= \sqrt{a^2 + b^2} \ \textrm{sin}[x + \textrm{atan} \ (b/a)]
   \end{align}
 
   \textbf{MOS}
@@ -123,14 +129,11 @@
     \draw (3, -1.5) node [ieeestd xor port] {XOR};
   \end{circuitikz}
 
-  \textbf{Misc}
+  \textbf{RF}
   \begin{align}
-    e &= 10^{x/10 \textrm{dB}}\\
-    x &= 10 \ \textrm{log}_{10}(e) \ \textrm{dB}\\
-    a \ \textrm{sin} (x) + b \ \textrm{cos} (x) &= \sqrt{a^2 + b^2} \ \textrm{sin}[x + \textrm{atan} \ (b/a)]
+    Z_L &= Z_S^*
   \end{align}
+
 \end{multicols}
-
-
 
 \end{document}
